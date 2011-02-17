@@ -24,6 +24,7 @@ Kohana_reCAPCTHA is a module that facilitates the use of the reCAPTCHA library a
 ## Instructions:
 * A default recaptcha.php config file is included but you MUST change the public and private key values for the plugin to work.
 * Create an instance of the Kohana Recaptcha object by calling Recaptcha::instance().
+	* You can pass a string to the instance method to switch between different config settings, the default is ... default.
 * There are only two methods:
 	* get_html($﻿publickey = NULL) - pass your public key optionally if you want to use a different one from the config file you initilized the Recaptcha object with.
 	* ﻿is_valid($privatekey = NULL) - you can override your config private key value here.
