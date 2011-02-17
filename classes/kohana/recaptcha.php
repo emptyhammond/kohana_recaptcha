@@ -40,7 +40,7 @@ class Kohana_Recaptcha
 			echo recaptcha_get_html($publickey);
 		}
 		
-		public function is_valid($privatekey = NULL)
+		public function is_valid($privatekey = NULL, $challenge_field = '', $response_field = '')
 		{
 			if ( ! $privatekey) 
 			{ 
