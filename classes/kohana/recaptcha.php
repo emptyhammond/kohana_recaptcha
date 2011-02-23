@@ -52,7 +52,7 @@ class Kohana_Recaptcha
 				}
 			}
 			
-			if ( ! $url) { $url = $_SERVER['REMOTE_ADDR']; }
+			$url = $_SERVER['REMOTE_ADDR'];
 						
 			return recaptcha_check_answer($privatekey, $url, $challenge_field, $response_field); 
 		}
