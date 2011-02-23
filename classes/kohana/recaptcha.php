@@ -40,7 +40,7 @@ class Kohana_Recaptcha
 			echo recaptcha_get_html($publickey);
 		}
 		
-		public function is_valid($challenge_field = '', $response_field = '', $privatekey = NULL)
+		public function is_valid($challenge_field = '', $response_field = '', $privatekey = NULL, $type = 'bool')
 		{
 			if ( ! $privatekey) 
 			{ 
@@ -53,7 +53,9 @@ class Kohana_Recaptcha
 			}
 			
 			$url = $_SERVER['REMOTE_ADDR'];
-						
-			return recaptcha_check_answer($privatekey, $url, $challenge_field, $response_field); 
+			
+			$result = recaptcha_check_answer($privatekey, $url, $challenge_field, $response_field);
+									
+			return ($type === 'object') ? $result : $result->is_valid; 
 		}
 }
