@@ -15,7 +15,7 @@ class Kohana_Recaptcha
 		{
 			if ( ! isset(Recaptcha::$_instance))
 			{				
-				$config = Kohana::config('recaptcha.'.$instance);
+				$config = Kohana::$config->load('recaptcha.'.$instance);
 				
 				require_once(MODPATH.'recaptcha/lib/recaptchalib.php');
 				
